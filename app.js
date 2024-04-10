@@ -9,7 +9,7 @@ const snake = new Snake(boardSize);
 let food = new Food(boardSize, snake.getCoordinates());
 
 const intervalId = setInterval(() => {
-  snake.move(food);
+  snake.move(boardSize);
   
   const snakeCoordinates = snake.getCoordinates();
   const foodCoordinates = food.y + '-' + food.x
@@ -20,5 +20,5 @@ const intervalId = setInterval(() => {
     snake.pop();
   }
   gameBoard.draw(snake.getCoordinates(), food);
-  
+
 }, 500);
