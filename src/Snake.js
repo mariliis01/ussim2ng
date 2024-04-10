@@ -6,4 +6,4 @@ class Snake {
   }
 }
 
-export { Snake }
+export { Snake };

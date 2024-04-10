@@ -3,7 +3,6 @@ import { Snake } from "./src/Snake.js";
 
 const boardSize = 20;
 
-
-const gameBoard = new GameBoard(boardSize);
 const snake = new Snake();
+const gameBoard = new GameBoard(boardSize);
 gameBoard.draw(snake.getCoordinates());
