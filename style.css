@@ -22,3 +22,7 @@ body {
 .snake {
     background-color: violet;
 }
+
+.food {
+    background-color: red;
+}

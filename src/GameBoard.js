@@ -6,7 +6,9 @@ class GameBoard {
     this.boardSize = boardSize;
   }
 
-  draw(snakeCoordinates) {
+  draw(snakeCoordinates, food) {
+    this.gameBoardTable.innerHTML = "";
+
     for (let i = 0; i < this.boardSize; i++) {
       const rowTr = document.createElement("tr");
 
@@ -17,6 +19,11 @@ class GameBoard {
 
         if (snakeCoordinates.includes(id)) {
           cellTd.classList.add("snake");
+        }
+
+        const foodCoordinates = food.y + "-" + food.x;
+        if (id == foodCoordinates) {
+          cellTd.classList.add("food");
         }
 
         rowTr.append(cellTd);
