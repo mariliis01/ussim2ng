@@ -1,13 +1,11 @@
 class Snake {
   coordinates = [];
   direction = "u";
-
   constructor(boardSize) {
     const y = Math.floor(boardSize / 2);
     const x = Math.floor(boardSize / 2);
     let c = y + "-" + y;
     this.coordinates.push(c);
-
     document.addEventListener("keydown", (e) => {
       switch (e.key) {
         case "ArrowUp":
@@ -25,15 +23,12 @@ class Snake {
       }
     });
   }
-
   getCoordinates() {
     return this.coordinates;
   }
-
-  move(boardSize) {
+  calculateNewHead (boardSize) {
     let [y, x] = this.coordinates[0].split("-");
     //console.log(y, x);
-
     switch (this.direction) {
       case "u":
         if (y == 0) {
@@ -53,7 +48,7 @@ class Snake {
         if (x == 0) {
           x = boardSize - 1;
         } else {
-          x++;
+          x--;
         }
         break;
       case "r":
@@ -62,16 +57,16 @@ class Snake {
         } else {
           x++;
         }
-
         break;
     }
+    return y + "-" + x;
+  }
 
-    const c = y + "-" + x;
+  unshift ( c ) {
     this.coordinates.unshift(c);
   }
-  pop() {
+  pop () {
     this.coordinates.pop();
   }
 }
-
 export { Snake };
