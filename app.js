@@ -20,6 +20,7 @@ const intervalId = setInterval(() => {
 
     if ( snakeCoordinates.includes(newHead) ) {
         gameBoard.gameOver();
+        score.saveHighScore();
         clearInterval(intervalId);
     } else {
         snake.unshift(newHead);

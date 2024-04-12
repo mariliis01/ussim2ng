@@ -5,6 +5,7 @@ body {
 #container {
     width: 100%;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
@@ -42,9 +43,12 @@ font-size: 12px;
 
 .score-container {
     display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+    margin-top: 2rem;
 }
 
-#score {
+#score,#high-score {
     margin-left: 1rem;
+    margin-bottom: 0.2rem;
 }
-
