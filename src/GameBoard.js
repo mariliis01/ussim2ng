@@ -21,7 +21,7 @@ class GameBoard {
           if (id == snakeCoordinates[0]) {
             cellTd.innerText = "🐸";
           } else {
-            cellTd.innerText = "🟣";
+            cellTd.innerText = "🟢";
             cellTd.classList.add("snake");
           }
         }
@@ -33,7 +33,7 @@ class GameBoard {
         }
 
         rowTr.append(cellTd);
-        console.log(id);
+      
       }
 
       this.gameBoardTable.append(rowTr);

@@ -1,12 +1,14 @@
 import { GameBoard } from "./src/GameBoard.js";
 import { Snake } from "./src/Snake.js";
 import { Food } from "./src/Food.js";
+import { Score } from "./src/Score.js";
 
 const boardSize = 20;
 
 const gameBoard = new GameBoard(boardSize);
 const snake = new Snake(boardSize);
 let food = new Food(boardSize, snake.getCoordinates());
+const score = new Score();
 
 const intervalId = setInterval(() => {
 
@@ -23,8 +25,10 @@ const intervalId = setInterval(() => {
         snake.unshift(newHead);
     }
 
-  if (foodCoordinates == snakeCoordinates [0]) {
-    food = new Food(boardSize, snakeCoordinates);
+  if (foodCoordinates == snakeCoordinates[0]) {
+      score.increment(); 
+      score.update();
+      food = new Food(boardSize, snakeCoordinates);
   } else {
     snake.pop();
   }
