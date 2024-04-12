@@ -1,5 +1,5 @@
 class Food {
-  emojis = ["🍎"];
+  emojis = ["🦟"];
 
   y;
   x;
