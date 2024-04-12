@@ -1,8 +1,9 @@
 class Food {
   emojis = ["🍎"];
+
   y;
   x;
-emojiIndex;
+  emoji;
 
   constructor(boardSize, snakeCoordinates) {
     let c;
@@ -13,15 +14,13 @@ emojiIndex;
       c = this.y + "-" + this.x;
     } while (snakeCoordinates.includes(c));
 
-    const emojiIndex = Math.floor(Math.random() * this.emojis.length)
-    this.emoji = this.emojis[emojiIndex]
-
+    const emojiIndex = Math.floor(Math.random() * this.emojis.length);
+    this.emoji = this.emojis[emojiIndex];
   }
 
-  getEmoji () {
+  getEmoji() {
     return this.emoji;
   }
-
 }
 
 export { Food };

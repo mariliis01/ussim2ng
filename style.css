@@ -20,11 +20,11 @@ body {
 }
 
 .snake {
-    background-color: violet;
+    font-size: 11px;
 }
 
 .food {
-    background-color: red;
+font-size: 12px;
 }
 
 .hidden {

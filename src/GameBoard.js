@@ -18,12 +18,14 @@ class GameBoard {
         cellTd.setAttribute("id", id);
 
         if (snakeCoordinates.includes(id)) {
+          cellTd.innerText = "🟣";
           cellTd.classList.add("snake");
         }
 
         const foodCoordinates = food.y + "-" + food.x;
         if (id == foodCoordinates) {
-          cellTd.classList.add("food");
+          //ellTd.classList.add("food");
+          cellTd.innerText = food.getEmoji();
         }
 
         rowTr.append(cellTd);
